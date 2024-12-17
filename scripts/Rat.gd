@@ -1,0 +1,2 @@
+class_name Rat
+extends Node2D
