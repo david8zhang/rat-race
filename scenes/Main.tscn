@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfcmxmyxu2d0a"]
+[gd_scene load_steps=5 format=3 uid="uid://dfcmxmyxu2d0a"]
 
 [ext_resource type="Script" path="res://scripts/Game.gd" id="1_yyimo"]
 [ext_resource type="PackedScene" uid="uid://dcjoqinv63t28" path="res://prefabs/Cat.tscn" id="2_rvgao"]
 [ext_resource type="PackedScene" uid="uid://bvpjp1ywv53wu" path="res://prefabs/Rat.tscn" id="2_vph75"]
+[ext_resource type="PackedScene" uid="uid://dggyflmlkhc2b" path="res://prefabs/Table.tscn" id="3_krnvi"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_yyimo")
 rat_scene = ExtResource("2_vph75")
 
 [node name="Cat" parent="." instance=ExtResource("2_rvgao")]
+
+[node name="Table" parent="." instance=ExtResource("3_krnvi")]
+position = Vector2(8, 469)
