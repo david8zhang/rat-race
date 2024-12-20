@@ -1,5 +1,5 @@
 class_name Rat
-extends Node2D
+extends RigidBody2D
 
 @onready var game = get_node("/root/Main") as Game
 var rat_name = ""

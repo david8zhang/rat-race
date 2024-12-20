@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfcmxmyxu2d0a"]
+[gd_scene load_steps=6 format=3 uid="uid://dfcmxmyxu2d0a"]
 
 [ext_resource type="Script" path="res://scripts/Game.gd" id="1_yyimo"]
 [ext_resource type="PackedScene" uid="uid://dcjoqinv63t28" path="res://prefabs/Cat.tscn" id="2_rvgao"]
 [ext_resource type="PackedScene" uid="uid://bvpjp1ywv53wu" path="res://prefabs/Rat.tscn" id="2_vph75"]
 [ext_resource type="PackedScene" uid="uid://dggyflmlkhc2b" path="res://prefabs/Table.tscn" id="3_krnvi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsypi"]
+size = Vector2(98, 343)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_yyimo")
@@ -13,3 +16,13 @@ rat_scene = ExtResource("2_vph75")
 
 [node name="Table" parent="." instance=ExtResource("3_krnvi")]
 position = Vector2(8, 469)
+
+[node name="Finish" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
+position = Vector2(1101, 471.5)
+shape = SubResource("RectangleShape2D_lsypi")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[connection signal="body_entered" from="Finish" to="." method="_on_finish_body_entered"]
